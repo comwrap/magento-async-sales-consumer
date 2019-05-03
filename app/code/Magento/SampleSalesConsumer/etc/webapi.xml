@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/invoices" method="POST">
+        <service class="Magento\Sales\Api\InvoiceRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Sales::sales_invoice" />
+        </resources>
+    </route>
+    <route url="/V1/creditmemo" method="POST">
+        <service class="Magento\Sales\Api\CreditmemoRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Sales::sales_creditmemo" />
+        </resources>
+    </route>
+    <route url="/V1/shipment" method="POST">
+        <service class="Magento\Sales\Api\ShipmentRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Sales::shipment" />
+        </resources>
+    </route>
+    <route url="/V1/orders" method="POST">
+        <service class="Magento\Sales\Api\OrderRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Magento_Sales::create" />
+        </resources>
+    </route>
+</routes>
