@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <!-- overwrite original magento publisher exchange to the new exchange -->
+    <publisher topic="async.magento.sales.api.orderrepositoryinterface.save.post">
+        <!--
+        Original magento publisher for async topic have "magento" exchange
+        <connection name="amqp" exchange="magento" disabled="false"/>
+        -->
+        <connection name="amqp" exchange="magento_async_sales" disabled="false"/>
+    </publisher>
+    <publisher topic="async.magento.sales.api.invoicerepositoryinterface.save.post">
+        <connection name="amqp" exchange="magento_async_sales" disabled="false"/>
+    </publisher>
+    <publisher topic="async.magento.sales.api.creditmemorepositoryinterface.save.post">
+        <connection name="amqp" exchange="magento_async_sales" disabled="false"/>
+    </publisher>
+</config>
